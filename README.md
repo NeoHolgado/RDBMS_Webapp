@@ -1,6 +1,6 @@
 # UFC Relational Database Management System
 
-By: Neo Holgado and Kyle Marasa
+**By:** Neo Holgado and Kyle Marasa
 Year: 2025
 Class: Introduction to Databases (CS340-400)
 Description: Relational Database Management System inspired by the UFC organization. Allows management of Fighters, Fights, Participants, Events, and Teams.
