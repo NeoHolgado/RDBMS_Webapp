@@ -1,17 +1,17 @@
 # UFC Relational Database Management System
 
 **By:** Neo Holgado and Kyle Marasa
-Year: 2025
-Class: Introduction to Databases (CS340-400)
-Description: Relational Database Management System inspired by the UFC organization. Allows management of Fighters, Fights, Participants, Events, and Teams.
-Tech Stack: NodeJS, Express, and Handlebars
-Styling: CSS and Tailwind
-Database lang: SQL
-Database Server: OSU and MariaDB
+**Year:** 2025
+**Class:** Introduction to Databases (CS340-400)
+**Description:** Relational Database Management System inspired by the UFC organization. Allows management of Fighters, Fights, Participants, Events, and Teams.
+**Tech Stack:** NodeJS, Express, and Handlebars
+**Styling:** CSS and Tailwind
+**Database lang:** SQL
+**Database Server:** OSU and MariaDB
 
-**Team Roles**
-Neo Holgado: Team Lead, Submission Proofreader, Ed Discussion Liaison, Researcher
-Kyle Marasa: Deadline Enforcer, Researcher, Creativity Officer
+# Team Roles
+**Neo Holgado:** Team Lead, Submission Proofreader, Ed Discussion Liaison, Researcher
+**Kyle Marasa:** Deadline Enforcer, Researcher, Creativity Officer
 
 **Work Distribution**
 Neo Holgado:
