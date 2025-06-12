@@ -13,8 +13,8 @@
 **Neo Holgado:** Team Lead, Submission Proofreader, Ed Discussion Liaison, Researcher
 **Kyle Marasa:** Deadline Enforcer, Researcher, Creativity Officer
 
-**Work Distribution**
-Neo Holgado:
+# Work Distribution
+**Neo Holgado:**
   Database Design
   Executive Summary
   ERD
@@ -28,7 +28,7 @@ Neo Holgado:
   app.js: Routes for all ^
   views: main.hbs, fighters.hbs, fights_participants.hbs, home.hbs, participants.hbs
 
-Kyle Marasa:
+**Kyle Marasa:**
   Overview
   DDL.sql: Events, Fights (and their respective INSERT queries)
   DML.sql: Example queries for ^
@@ -36,12 +36,12 @@ Kyle Marasa:
   app.js: Routes for all ^
   views: events_fighters.hbs, teams.hbs
   
-Mutual:
+**Mutual:**
   Database outline
   Debugging
   Example Data
   
-**Citations**
+# Citations
 Citation for starter code:
 Date: 05/08/2025
 Adapted from starter code provided from:
