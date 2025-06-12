@@ -11,6 +11,7 @@
 
 # Team Roles
 **Neo Holgado:** Team Lead, Submission Proofreader, Ed Discussion Liaison, Researcher
+
 **Kyle Marasa:** Deadline Enforcer, Researcher, Creativity Officer
 
 # Work Distribution
