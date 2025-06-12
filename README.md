@@ -7,6 +7,7 @@ Description: Relational Database Management System inspired by the UFC organizat
 Tech Stack: NodeJS, Express, and Handlebars
 Styling: CSS and Tailwind
 Database lang: SQL
+Database Server: OSU and MariaDB
 
 **Team Roles**
 Neo Holgado: Team Lead, Submission Proofreader, Ed Discussion Liaison, Researcher
