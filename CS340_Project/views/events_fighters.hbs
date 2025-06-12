@@ -1,0 +1,108 @@
+
+<body>
+
+    <h1>Create an Event and Add Fighters</h1>
+    
+    <!-- add event details and fighters -->
+    <form class="cuForm" action="/add-event" method="POST">
+        
+        <h3>Event Details</h3>
+        <br>
+        <label for="event_name">Event Name:</label>
+        <input type="text" id="event_name" name="event_name" class="form-field" required>
+        <br><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" class="form-field" required>
+        <br><br>
+
+        <label for="date">Event Date:</label>
+        <input type="datetime-local" id="date" name="date" class="form-field" required>
+        <br><br>
+
+        <button type="submit">Submit Event and Fighters</button>
+    </form>
+    <h1>Events</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Event ID</th>
+            <th>Event Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each events}}
+<tr>
+  <form method="POST" action="/update-event" style="display: contents;">
+        <td>
+          <input type="text" value="{{this.event_id}}" readonly class="form-field">
+          <input type="hidden" name="event_id" value="{{this.event_id}}">
+        </td>
+
+        <td>
+          <input type="text" name="event_name" class="form-field" value="{{this.event_name}}" required>
+        </td>
+
+        <td>
+          <input type="text" name="location" class="form-field" value="{{this.location}}" required>
+        </td>
+
+        <td>
+          <input type="datetime-local" name="date" class="form-field" value="{{this.date}}" required>
+        </td>
+
+        <td>
+          <button type="submit">Update</button>
+      </form>
+
+      <!-- Delete Form -->
+      <form method="POST" action="/delete-event" style="display: inline;">
+        <input type="hidden" name="event_id" value="{{this.event_id}}">
+        <button type="submit" onclick="return confirm('Are you sure you want to delete this event?');">Delete</button>
+      </form>
+  </td>
+</tr>
+{{/each}}
+    </tbody>
+</table>
+
+<h1>Fighter's Events</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Fighter Event ID</th>
+      <th>Fighter Name</th>
+      <th>Event Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each fighters_events}}
+    <tr>
+      <form action="/fighter_events/update/{{this.fighter_event_id}}" method="POST" class="fighter-event-form">
+        <td>{{this.fighter_event_id}}</td>
+        <td>{{this.fighter_name}}</td>
+        <td>{{this.event_name}}</td>
+
+      
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<script>
+
+  document.querySelectorAll('.edit-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const row = this.closest('tr');
+      row.querySelectorAll('input').forEach(input => input.removeAttribute('readonly'));
+      row.querySelector('.update-btn').style.display = 'inline';
+      this.style.display = 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

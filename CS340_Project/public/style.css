@@ -1,0 +1,114 @@
+/* Typography */
+h1, h2 {
+    margin-left: 1rem; /* 16px */
+  }
+  
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    margin: 2rem auto; /* centers and gives space */
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem; /* 12px */
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Custom Form Class (non-table forms) */
+  .cuForm {
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cuForm input,
+  .cuForm select {
+    margin-bottom: 0.5rem;
+    margin-right: 0.75rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  /* Navigation */
+  nav {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  a {
+    margin-left: 1rem; /* 16px */
+  }
+  
+  /* Homepage text section */
+  .homepageDescription {
+    margin-left: 2rem; /* 32px */
+    max-width: 40rem;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /* Form field utility */
+  .form-field {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    width: 100%;
+  }
+  
+  /* Custom Font: Cal Sans */
+  @font-face {
+    font-family: 'Cal Sans';
+    src: url('/CalSans-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .cal-sans {
+    font-family: 'Cal Sans', sans-serif;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #dc2626; /* Tailwind red-600 */
+    color: white;
+  }
+
+  h1 {
+    max-width: 64rem;       /* Tailwind's max-w-4xl */
+    margin-left: auto;
+    margin-right: auto;     /* mx-auto */
+    padding: 2rem 1rem;     /* px-4 py-8 */
+    text-align: center;
+    font-size: 1.875rem;    /* Tailwind's text-3xl */
+    font-family: 'Cal Sans', sans-serif;
+  }
+
+  h3 {
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 1.25rem; /* Tailwind's text-xl */
+  }

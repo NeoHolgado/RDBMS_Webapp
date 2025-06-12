@@ -1,0 +1,127 @@
+{{! 
+Citation for use of AI Tools:
+Date: 05/08/2025
+Prompts used to learn how to generate a dynamic dropdown menu in table:
+    How can I generate a dynamic <select> dropdown for a column 
+    in a table form, where the options come from the database, 
+    and the current method is pre-selected for each row?
+AI Source URL: https://chatgpt.com
+}}
+
+
+{{! UFC fighters }}
+<body>
+    <h1 class="max-w-4xl mx-auto px-4 py-8 text-center cal-sans text-3xl">Add a UFC Fighter</h1>
+    
+    {{! Add fighter details in form }}
+    <form class="cuForm" action="/add-fighter" method="POST">
+        <h3 class="cal-sans">Fighter Details</h3>
+        <br>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" class="form-field" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" class="form-field" required>
+        <br><br>
+
+        <label for="weight_class">Weight Class:</label>
+        <select id="weight_class" name="weight_class" required>
+            <option>Flyweight</option>
+            <option>Bantamweight</option>
+            <option>Featherweight</option>
+            <option>Lightweight</option>
+            <option>Welterweight</option>
+            <option>Middleweight</option>
+            <option>Light Heavyweight</option>
+            <option>Heavyweight</option>
+        </select>
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" class="form-field" required>
+        <br><br>
+
+        <label for="record">Record:</label>
+        <input type="text" id="record" name="record" class="form-field"> (WINS-LOSSES-DRAWS) Ex: 21-5-2
+        <br><br>
+
+        {{! Dynamically pull and display teams from DB in dropdown }}
+        <label for="team_id">Team:</label>
+        <select id="team_id" name="team_id" required>
+            {{#each teams}}
+            <option value="{{this.team_id}}">{{this.team_name}}</option>
+            {{/each}}
+        </select>
+        <br><br>
+
+        <button type="submit">Add Fighter</button>
+    </form>
+    
+    {{! Fighters Table }}
+    <h2 class="max-w-4xl mx-auto px-4 py-8 text-center cal-sans text-3xl">Fighters</h2>
+    <div style="overflow-x: auto;">
+        <table id="fighters_Table">
+            <thead>
+                {{! Columns / Attributes }}
+                <tr>
+                    <th>Fighter ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Weight Class</th>
+                    <th>Age</th>
+                    <th>Record</th>
+                    <th>Team Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each fighters}}
+                <tr>
+                    {{!-- Update form --}}
+                    <form action="/update-fighter" method="POST" style="display:inline;">
+                        <td><input type="number" name="fighter_id" class="form-field" value="{{this.fighter_id}}" readonly></td>
+                        <td><input type="text" name="first_name" class="form-field" value="{{this.first_name}}"></td>
+                        <td><input type="text" name="last_name" class="form-field" value="{{this.last_name}}"></td>
+
+                        <td>
+                            <select name="weight_class">
+                                <option value="Flyweight" {{#if (eq this.weight_class "Flyweight")}}selected{{/if}}>Flyweight</option>
+                                <option value="Bantamweight" {{#if (eq this.weight_class "Bantamweight")}}selected{{/if}}>Bantamweight</option>
+                                <option value="Featherweight" {{#if (eq this.weight_class "Featherweight")}}selected{{/if}}>Featherweight</option>
+                                <option value="Lightweight" {{#if (eq this.weight_class "Lightweight")}}selected{{/if}}>Lightweight</option>
+                                <option value="Welterweight" {{#if (eq this.weight_class "Welterweight")}}selected{{/if}}>Welterweight</option>
+                                <option value="Middleweight" {{#if (eq this.weight_class "Middleweight")}}selected{{/if}}>Middleweight</option>
+                                <option value="Light Heavyweight" {{#if (eq this.weight_class "Light Heavyweight")}}selected{{/if}}>Light Heavyweight</option>
+                                <option value="Heavyweight" {{#if (eq this.weight_class "Heavyweight")}}selected{{/if}}>Heavyweight</option>
+                            </select>
+                        </td>
+
+                        <td><input type="number" name="age" class="form-field" value="{{this.age}}"></td>
+                        <td><input type="text" name="record" class="form-field" value="{{this.record}}"></td>
+
+                        <td>
+                            <select name="team_id">
+                                {{#each ../teams}}
+                                        <option value="{{this.team_id}}" {{#if (eq this.team_id ../team_id)}}selected{{/if}}>
+                                            {{this.team_name}}
+                                        </option>
+                                {{/each}}
+                            </select>
+                        </td>
+
+                        <td>
+                            <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                    </form>
+
+                    {{!-- Delete form --}}
+                    <form action="/delete-fighter" method="POST" style="display:inline; margin-left: 5px;">
+                        <input type="hidden" name="fighter_id" value="{{this.fighter_id}}">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this fighter?');">Delete</button>
+                    </form>
+                        </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
