@@ -31,7 +31,7 @@
 
 **Kyle Marasa:**
   Overview
-  DDL.sql: Events, Fights (and their respective INSERT queries)
+  DDL.sql: Events, Fights, Teams (and their respective INSERT queries)
   DML.sql: Example queries for ^
   PL.sql: All Update and Delete Procs (ex: UpdateFighter, DeleteFighter)
   app.js: Routes for all ^
