@@ -16,30 +16,40 @@
 
 # Work Distribution
 **Neo Holgado:**
-  Database Design
-  Executive Summary
-  ERD
-  Schema
-  WebApp setup
-  Website Design
+  Database Design,
+  Executive Summary,
+  ERD,
+  Schema,
+  WebApp setup,
+  Website Design,
   DB Admin
+  
   DDL.sql: Fighters, Participants, Fights, Fights_Events (and their respective INSERT queries)
+  
   DML.sql: Example queries for ^
+  
   PL.sql: reset_db, All Create procs (ex: CreateFighter)
+  
   app.js: Routes for all ^
+  
   views: main.hbs, fighters.hbs, fights_participants.hbs, home.hbs, participants.hbs
 
 **Kyle Marasa:**
   Overview
+  
   DDL.sql: Events, Fights, Teams (and their respective INSERT queries)
+  
   DML.sql: Example queries for ^
+  
   PL.sql: All Update and Delete Procs (ex: UpdateFighter, DeleteFighter)
+  
   app.js: Routes for all ^
+  
   views: events_fighters.hbs, teams.hbs
   
 **Mutual:**
-  Database outline
-  Debugging
+  Database outline,
+  Debugging,
   Example Data
   
 # Citations
